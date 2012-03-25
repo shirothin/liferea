@@ -133,6 +133,9 @@ liferea_shell_init (LifereaShell *ls)
 		g_error ("Loading " PACKAGE_DATA_DIR G_DIR_SEPARATOR_S PACKAGE G_DIR_SEPARATOR_S  "liferea.ui failed");
 
 	gtk_builder_connect_signals (shell->priv->xml, NULL);
+
+	GtkSettings *settings = gtk_settings_get_default();
+	g_object_set (settings, "gtk-application-prefer-dark-theme", TRUE);
 }
 
 /**
